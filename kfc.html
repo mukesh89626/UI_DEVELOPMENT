@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head> <title> </title> 
+<script>
+  function OrderClick()
+  {
+    uname= document.getElementById("txtName").value;
+    burger = document.getElementById("optBurger");
+    roller = document.getElementById("optRoller");
+    krusher = document.getElementById("optKrusher");
+    fries = document.getElementById("optFries");
+   summary = document.getElementById("summary");
+
+    if(burger.checked)
+     {
+        mealCost=120;
+        mealName=burger.value;
+     }
+    if(roller.checked)
+    {
+       mealCost=100;
+       mealName=roller.value;
+    }
+    if(krusher.checked)
+    {
+       acost=40;
+       mealCost= mealCost + acost;
+    }
+    if(fries.checked)
+    {
+      acost=60;
+      mealCost= mealCost + acost;
+    }
+   summary.innerHTML = "Hello ! " + uname + "<br>" + "Your total Bill amount for the meal " + mealName + " is " +  "&#8377; " + mealCost;
+  }
+</script> 
+</head>
+<body>
+ <form>
+    <table align="center" border="1" bgcolor="maroon">
+      <caption> KFC Online Order </caption>
+      <tr>
+       <td colspan="2"> <img src="Images/kfctop.png"> </td>
+      </tr>
+      <tr>
+       <td colspan="2" align="center"> 
+   <font size="5" color="white">Customer Info </font> </td>
+      </tr>
+       <tr align="center">
+        <td><font size="5" color="white"> Your Name </font> </td>
+        <td> <input type="text" id="txtName"> </td>
+      </tr>
+      <tr>
+      <td colspan="2" align="center"> <font size="5" color="white"> Select a Meal  </font> </td> 
+     </tr>
+      <tr align="center">
+          <td> <img src="Images/omg1.png">
+         <font color="white" size="5">  
+          <br>           <input type="radio" id="optBurger" name="meal" value="OMG Burger"> OMG Burger  ( &#8377; 120/- )
+         </td>
+        <td> <img src="Images/omg2.png"> 
+        <font size="5" color="white">
+<br>           <input type="radio" id="optRoller" name="meal" value="OMG Roller"> OMG Roller  ( &#8377; 100/- )</td>
+      </tr>
+    <tr>
+        <td colspan="2" align="center"> <font color="white" size="5"> Select AD-ON </td>
+    </tr>
+<tr align="center">
+          <td> <img src="Images/krusher1.png">
+         <font color="white" size="5">  
+          <br>           <input type="checkbox" id="optKrusher" value="Brownie Krusher"> Brownie Krusher  ( &#8377; 40/- )
+         </td>
+        <td> <img src="Images/fries1.png"> 
+        <font size="5" color="white">
+<br>           <input type="checkbox" id="optFries" value="Large Fries"> Large Fries  ( &#8377; 60/- )</td>
+      </tr>
+      <tr>
+        <td colspan="2" align="center"> <input type="button" value="Order" onclick="OrderClick()"> </td>
+     <tr>
+     <tr>
+        <td colspan="2" align="center">
+         <font size="6" color="white">
+       <span id="summary"> </span>
+       </td>
+     </tr>
+   </table>
+</form>
+</body>
+</html>
